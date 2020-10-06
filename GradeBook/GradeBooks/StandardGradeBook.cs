@@ -6,9 +6,9 @@ using System.Collections.Generic;
 
 namespace GradeBook.GradeBooks
 {
-    class StandardGradeBook  : BaseGradeBook
+    public class StandardGradeBook  : BaseGradeBook
     {
-        public StandardGradeBook(string name) : base(name)
+        public StandardGradeBook(string name, bool isWeight) : base(name, isWeight)
         {
             Type = GradeBookType.Standard;
         }
