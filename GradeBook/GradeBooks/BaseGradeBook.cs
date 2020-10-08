@@ -111,10 +111,11 @@ namespace GradeBook.GradeBooks
 
         public virtual double GetGPA(char letterGrade, StudentType studentType)
         {
+            
             switch (letterGrade)
             {
                 case 'A':
-                    if (studentType != StudentType.Standard)
+                    if (studentType != StudentType.Standard && IsWeighted)
                     {
                         return 5;
                     }
@@ -122,6 +123,7 @@ namespace GradeBook.GradeBooks
                     {
                         return 4;
                     }
+                    
                 case 'B':
                     return 3;
                 case 'C':
@@ -132,6 +134,8 @@ namespace GradeBook.GradeBooks
                     return 0;
             }
             return 0;
+
+            
         }
 
         public virtual void CalculateStatistics()
